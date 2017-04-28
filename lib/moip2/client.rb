@@ -10,6 +10,7 @@ module Moip2
 
       @uri = get_base_uri
       self.class.base_uri @uri
+      self.class.debug_output $stdout if opts[:http_debug]
     end
 
     def sandbox?
