@@ -19,12 +19,8 @@ module Moip2
       Resource::Customer.new client, client.post(base_path, customer)
     end
 
-    def update(customer)
-      Resource::Customer.new client, client.put("#{base_path}/#{customer[:own_id]}", customer)
-    end
-
-    def details(customer_id)
-      Resource::Customer.new client, client.get("#{base_path}/#{customer_id}")
+    def update(customer_external_id, customer)
+      Resource::Customer.new client, client.put("#{base_path}/#{customer_external_id}", customer)
     end
   end
 

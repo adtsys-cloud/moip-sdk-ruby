@@ -35,20 +35,22 @@ module Moip2
       opts
     end
 
-    def post(path, resource)
-      options = opts().merge(body: convert_hash_keys_to(:camel_case, resource).to_json)
+    def post(path, resource, api_version: 2)
+      body = api_version == 1 ? resource : convert_hash_keys_to(:camel_case, resource)
+      options = opts().merge(body: body.to_json)
       resp = self.class.post path, options
       create_response resp
     end
 
-    def put(path, resource)
-      options = opts().merge(body: convert_hash_keys_to(:camel_case, resource).to_json)
+    def put(path, resource, api_version: 2)
+      body = api_version == 1 ? resource : convert_hash_keys_to(:camel_case, resource)
+      options = opts().merge(body: body.to_json)
       resp = self.class.put path, options
 
       create_response resp
     end
 
-    def get(path)
+    def get(path, api_version: 2)
       resp = self.class.get path, opts()
 
       create_response resp
