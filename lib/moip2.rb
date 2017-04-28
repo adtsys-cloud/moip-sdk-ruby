@@ -16,6 +16,7 @@ require "moip2/resource/invoice"
 require "moip2/resource/keys"
 require "moip2/resource/refund"
 require "moip2/resource/webhooks"
+require "moip2/resource/plan"
 
 require "moip2/response"
 require "moip2/client"
@@ -29,6 +30,7 @@ require "moip2/refund_api"
 require "moip2/api"
 require "moip2/keys_api"
 require "moip2/webhooks_api"
+require "moip2/plan_api"
 
 require "moip2/exceptions/invalid_enviroment_error"
 
