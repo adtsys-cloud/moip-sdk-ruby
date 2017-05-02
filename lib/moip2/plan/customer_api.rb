@@ -28,6 +28,10 @@ module Moip2
       def update(customer)
         Resource::Plan::Customer.new client, client.put("#{base_path}/#{customer[:code]}", customer, api_version: API_VERSION)
       end
+
+      def update_billing_infos(customer_id, billing_infos)
+        Resource::Plan::Customer::BillingInfos.new client, client.put("#{base_path}/#{customer_id}/billing_infos", billing_infos, api_version: API_VERSION)
+      end
     end
   end
 end

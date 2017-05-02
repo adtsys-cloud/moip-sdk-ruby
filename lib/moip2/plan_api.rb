@@ -28,5 +28,9 @@ module Moip2
     def customer
       Moip2::Plan::CustomerApi.new(client)
     end
+
+    def subscription
+      Moip2::Plan::SubscriptionApi.new(client)
+    end
   end
 end
